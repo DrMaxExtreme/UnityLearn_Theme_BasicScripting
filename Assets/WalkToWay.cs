@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WayPointMovement : MonoBehaviour
+public class WalkToWay : MonoBehaviour
 {
     [SerializeField] private Transform _path;
     [SerializeField] private float _speed;
