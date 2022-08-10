@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 8460872660483600671}
   - component: {fileID: 8460872660483600670}
   - component: {fileID: 8460872660483600669}
+  - component: {fileID: 1958609551}
+  - component: {fileID: 825831508}
+  - component: {fileID: 576591194}
   m_Layer: 0
   m_Name: EndPoint
   m_TagString: Untagged
@@ -112,5 +115,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cc56e79b6ca724ebc737b2f23586ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 576591194}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1958609551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460872660483600668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949d5c661e1b34645b9add6e55e028d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _renderer: {fileID: 8460872660483600671}
-  _reaghtColor: {r: 0.4165433, g: 0.8784314, b: 0.3333333, a: 1}
+  _targetColor: {r: 0.3333333, g: 0.8784314, b: 0.33333334, a: 1}
+--- !u!114 &825831508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460872660483600668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949d5c661e1b34645b9add6e55e028d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 8460872660483600671}
+  _targetColor: {r: 0.3333333, g: 0.8784314, b: 0.33333334, a: 1}
+--- !u!114 &576591194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460872660483600668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949d5c661e1b34645b9add6e55e028d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 8460872660483600671}
+  _targetColor: {r: 0.3333333, g: 0.8784314, b: 0.33333334, a: 1}
