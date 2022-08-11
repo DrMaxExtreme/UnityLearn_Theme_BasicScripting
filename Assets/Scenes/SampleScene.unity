@@ -275,6 +275,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227218340}
     m_Modifications:
+    - target: {fileID: 3499688419564344118, guid: 4c1fdccc8a8664e44af5b06ddccb13e4, type: 3}
+      propertyPath: _reached.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
     - target: {fileID: 7261138086722389866, guid: 4c1fdccc8a8664e44af5b06ddccb13e4, type: 3}
       propertyPath: m_Name
       value: EndPoint (4)
@@ -445,14 +449,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227218340}
     m_Modifications:
-    - target: {fileID: 5776724922365801208, guid: 4c1fdccc8a8664e44af5b06ddccb13e4, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5979392150327918740, guid: 4c1fdccc8a8664e44af5b06ddccb13e4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 7261138086722389866, guid: 4c1fdccc8a8664e44af5b06ddccb13e4, type: 3}
       propertyPath: m_Name
       value: EndPoint (5)
