@@ -9,7 +9,7 @@ public class GameFinishTrigger : MonoBehaviour
 
     private void OnEnable()
     {
-        _points = gameObject.GetComponentInChildren<EndPoint[]>();
+        _points = GetComponentsInChildren<EndPoint>();
 
         foreach (var point in _points)
             point.Reached += OnEndPointReached;
