@@ -492,6 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2703ca867cb59834d8efa94b5bd2075d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 1706653940}
+  _force: 200
 --- !u!4 &1811085554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7612170222581598538, guid: 4c1fdccc8a8664e44af5b06ddccb13e4, type: 3}

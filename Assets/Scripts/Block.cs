@@ -6,8 +6,11 @@ using UnityEngine.EventSystems;
 
 public class Block : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private Rigidbody2D _rigidbody2D;
+    [SerializeField] private float _force;
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(gameObject.name);
+        _rigidbody2D.AddForce(Vector2.up * _force);
     }
 }
