@@ -1202,7 +1202,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _speedVolumeUp: 0.01
+  _speedVolumeUp: 0.001
 --- !u!61 &1867131810
 BoxCollider2D:
   m_ObjectHideFlags: 0
