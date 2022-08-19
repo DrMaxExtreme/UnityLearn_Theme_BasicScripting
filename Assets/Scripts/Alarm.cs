@@ -7,26 +7,29 @@ public class Alarm : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reached;
     [SerializeField] private float _speedVolumeUp;
-    private float _volume;
-    private int _vloumeSteps;
+    private Coroutine _volumeValue;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<PhysicsMovement>(out PhysicsMovement player))
+        if(collision.TryGetComponent(out PhysicsMovement player))
         {
             Debug.Log("On");
-            StopCoroutine(VolumeDown());
-            StartCoroutine(VolumeUp());
+
+            if (_volumeValue != null) StopCoroutine(_volumeValue);
+
+            _volumeValue = StartCoroutine(VolumeUp());
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<PhysicsMovement>(out PhysicsMovement player))
+        if (collision.TryGetComponent(out PhysicsMovement player))
         {
             Debug.Log("Off");
-            StopCoroutine(VolumeUp());
-            StartCoroutine(VolumeDown());
+
+            if (_volumeValue != null) StopCoroutine(_volumeValue);
+
+            _volumeValue = StartCoroutine(VolumeDown());
         }
     }
 
