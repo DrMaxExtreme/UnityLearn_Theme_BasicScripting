@@ -32,9 +32,9 @@ public class Alarm : MonoBehaviour
 
     private IEnumerator VolumeUp()
     {
-        for (int i = 0; i < _vloumeSteps; i++)
+        while (GetComponent<AudioSource>().volume < 1)
         {
-            GetComponent<AudioSource>().volume = Mathf.MoveTowards(GetComponent<AudioSource>().volume, 100, _speedVolumeUp);
+            GetComponent<AudioSource>().volume = Mathf.MoveTowards(GetComponent<AudioSource>().volume, 1, _speedVolumeUp);
 
             yield return null;
         }
@@ -42,7 +42,7 @@ public class Alarm : MonoBehaviour
 
     private IEnumerator VolumeDown()
     {
-        for (int i = 0; i < _vloumeSteps; i++)
+        while (GetComponent<AudioSource>().volume > 0)
         {
             GetComponent<AudioSource>().volume = Mathf.MoveTowards(GetComponent<AudioSource>().volume, 0, _speedVolumeUp);
         
