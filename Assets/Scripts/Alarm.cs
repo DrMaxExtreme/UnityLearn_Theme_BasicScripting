@@ -7,7 +7,13 @@ public class Alarm : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reached;
     [SerializeField] private float _speedVolumeUp;
-    private Coroutine _volumeValue;
+    private Coroutine _volumeChange;
+    private AudioSource _audioSourceComponent;
+
+    private void Start()
+    {
+        _audioSourceComponent = GetComponent<AudioSource>(); 
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,9 +21,9 @@ public class Alarm : MonoBehaviour
         {
             Debug.Log("On");
 
-            if (_volumeValue != null) StopCoroutine(_volumeValue);
+            if (_volumeChange != null) StopCoroutine(_volumeChange);
 
-            _volumeValue = StartCoroutine(VolumeUp());
+            _volumeChange = StartCoroutine(VolumeChange(1));
         }
     }
 
@@ -27,28 +33,18 @@ public class Alarm : MonoBehaviour
         {
             Debug.Log("Off");
 
-            if (_volumeValue != null) StopCoroutine(_volumeValue);
+            if (_volumeChange != null) StopCoroutine(_volumeChange);
 
-            _volumeValue = StartCoroutine(VolumeDown());
+            _volumeChange = StartCoroutine(VolumeChange(0));
         }
     }
 
-    private IEnumerator VolumeUp()
+    private IEnumerator VolumeChange(float targetVolume)
     {
-        while (GetComponent<AudioSource>().volume < 1)
+        while (GetComponent<AudioSource>().volume != targetVolume)
         {
-            GetComponent<AudioSource>().volume = Mathf.MoveTowards(GetComponent<AudioSource>().volume, 1, _speedVolumeUp);
+            _audioSourceComponent.volume = Mathf.MoveTowards(_audioSourceComponent.volume, targetVolume, _speedVolumeUp);
 
-            yield return null;
-        }
-    }
-
-    private IEnumerator VolumeDown()
-    {
-        while (GetComponent<AudioSource>().volume > 0)
-        {
-            GetComponent<AudioSource>().volume = Mathf.MoveTowards(GetComponent<AudioSource>().volume, 0, _speedVolumeUp);
-        
             yield return null;
         }
     }

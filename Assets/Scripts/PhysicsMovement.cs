@@ -24,19 +24,19 @@ public class PhysicsMovement : MonoBehaviour
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
 
-    void OnEnable()
+    private void OnEnable()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    private void Start()
     {
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask(LayerMask);
         contactFilter.useLayerMask = true;
     }
 
-    void Update()
+    private void Update()
     {
         targetVelocity = new Vector2(Input.GetAxis("Horizontal"), 0);
 
@@ -44,7 +44,7 @@ public class PhysicsMovement : MonoBehaviour
             Velocity.y = _jumpPower;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Velocity += GravityModifier * Physics2D.gravity * Time.deltaTime;
         Velocity.x = targetVelocity.x;
@@ -62,7 +62,7 @@ public class PhysicsMovement : MonoBehaviour
         Movement(move, true);
     }
 
-    void Movement(Vector2 move, bool yMovement)
+    private void Movement(Vector2 move, bool yMovement)
     {
         float distance = move.magnitude;
 
