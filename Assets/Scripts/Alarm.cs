@@ -7,8 +7,12 @@ public class Alarm : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reached;
     [SerializeField] private float _speedVolumeUp;
+
     private Coroutine _volumeChange;
     private AudioSource _audioSourceComponent;
+    //private float 
+
+    //Rigidbody2D = GetComponent<Rigidbody2D>();
 
     private void Start()
     {
