@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Alarm : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reached;
@@ -10,9 +11,6 @@ public class Alarm : MonoBehaviour
 
     private Coroutine _volumeChange;
     private AudioSource _audioSourceComponent;
-    //private float 
-
-    //Rigidbody2D = GetComponent<Rigidbody2D>();
 
     private void Start()
     {
