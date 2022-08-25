@@ -1203,6 +1203,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _speedVolumeUp: 0.005
+  _audioSourceComponent: {fileID: 1867131811}
 --- !u!61 &1867131810
 BoxCollider2D:
   m_ObjectHideFlags: 0
