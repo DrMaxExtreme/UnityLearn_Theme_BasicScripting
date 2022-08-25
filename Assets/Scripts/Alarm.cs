@@ -7,8 +7,6 @@ using UnityEngine.Events;
 public class Alarm : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reached;
-    [SerializeField] private float _speedVolumeUp;
-    [SerializeField] private AudioSource _audioSourceComponent;
 
     private Coroutine _volumeChange;
 
@@ -19,6 +17,8 @@ public class Alarm : MonoBehaviour
             float targetVolume = 1f;
 
             Debug.Log("On");
+
+            _reached?.Invoke();
 
             if (_volumeChange != null) StopCoroutine(_volumeChange);
 
@@ -34,19 +34,11 @@ public class Alarm : MonoBehaviour
 
             Debug.Log("Off");
 
+            _reached?.Invoke();
+
             if (_volumeChange != null) StopCoroutine(_volumeChange);
 
             _volumeChange = StartCoroutine(VolumeChange(targetVolume));
-        }
-    }
-
-    private IEnumerator VolumeChange(float targetVolume)
-    {
-        while (_audioSourceComponent.volume != targetVolume)
-        {
-            _audioSourceComponent.volume = Mathf.MoveTowards(_audioSourceComponent.volume, targetVolume, _speedVolumeUp);
-
-            yield return null;
         }
     }
 }
