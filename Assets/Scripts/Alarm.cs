@@ -7,12 +7,13 @@ using UnityEngine.Events;
 public class Alarm : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reached;
+    [SerializeField] private TargetVolumeSetter _volumeSetter;
 
     private Coroutine _volumeChange;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out PhysicsMovement player))
+        if (collision.TryGetComponent(out PhysicsMovement player))
         {
             float targetVolume = 1f;
 
@@ -22,7 +23,7 @@ public class Alarm : MonoBehaviour
 
             if (_volumeChange != null) StopCoroutine(_volumeChange);
 
-            _volumeChange = StartCoroutine(VolumeChange(targetVolume));
+            _volumeChange = StartCoroutine(_volumeSetter.VolumeChange(targetVolume));
         }
     }
 
@@ -38,7 +39,7 @@ public class Alarm : MonoBehaviour
 
             if (_volumeChange != null) StopCoroutine(_volumeChange);
 
-            _volumeChange = StartCoroutine(VolumeChange(targetVolume));
+            _volumeChange = StartCoroutine(_volumeSetter.VolumeChange(targetVolume));
         }
     }
 }
