@@ -8,8 +8,28 @@ public class TargetVolumeSetter : MonoBehaviour
 
     [SerializeField] private float _speedVolumeUp;
 
-    public IEnumerator VolumeChange(float targetVolume)
+    private Coroutine _volumeChange;
+
+    public void VolumeChanger(bool alarmActived)
     {
+        float targetVolumeActiveAlarm = 1f;
+        float targetVolumeInactiveAlarm = 0f;
+        float targetVolume = 0f;
+
+        if (_volumeChange != null) StopCoroutine(_volumeChange);
+
+        if (alarmActived)
+            targetVolume = targetVolumeActiveAlarm;
+        else
+            targetVolume = targetVolumeInactiveAlarm;
+
+        _volumeChange = StartCoroutine(VolumeChange(targetVolume));
+    }
+
+    private IEnumerator VolumeChange(float targetVolume)
+    {
+        
+
         while (_audioSourceComponent.volume != targetVolume)
         {
             _audioSourceComponent.volume = Mathf.MoveTowards(_audioSourceComponent.volume, targetVolume, _speedVolumeUp);
