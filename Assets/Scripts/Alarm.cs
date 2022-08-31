@@ -18,10 +18,6 @@ public class Alarm : MonoBehaviour
             _reached?.Invoke();
 
             _volumeSetter.VolumeChanger(true);
-
-            //if (_volumeChange != null) StopCoroutine(_volumeChange);
-
-            //_volumeChange = StartCoroutine(_volumeSetter.VolumeChange(targetVolume));
         }
     }
 
@@ -34,10 +30,6 @@ public class Alarm : MonoBehaviour
             _reached?.Invoke();
 
             _volumeSetter.VolumeChanger(false);
-
-            //if (_volumeChange != null) StopCoroutine(_volumeChange);
-
-            //_volumeChange = StartCoroutine(_volumeSetter.VolumeChange(targetVolume));
         }
     }
 }

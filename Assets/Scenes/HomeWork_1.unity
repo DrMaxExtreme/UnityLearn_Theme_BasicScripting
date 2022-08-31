@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSourceComponent: {fileID: 1867131811}
-  _speedVolumeUp: 0.005
+  _speedVolumeUp: 0.0005
 --- !u!1 &1998663327
 GameObject:
   m_ObjectHideFlags: 0
